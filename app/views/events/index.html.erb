@@ -1,2 +1,15 @@
 <h1>Event Central</h1>
 
+<% if user_signed_in? %>
+  <%= link_to "New Event", new_event_path %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+  <%= link_to "Sign Up", new_user_registration_path %>
+<% end %>
+
+<% @events.each do |event| %>
+  <h2><%= event.name %></h2>
+  <strong><%= event.date %></strong>
+  <p><%= event.description %></p>
+<% end %>
