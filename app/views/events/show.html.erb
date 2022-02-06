@@ -3,3 +3,7 @@
 <strong>Host: <%= @event.creator.email %></strong>
 <p><%= @event.description %></p>
 <%= link_to "Back", root_path %>
+
+<% if user_signed_in? %>
+  <%= link_to "Sign Up", new_signup_path %>
+<% end %>
