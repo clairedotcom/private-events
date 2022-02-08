@@ -5,5 +5,5 @@
 <%= link_to "Back", root_path %>
 
 <% if user_signed_in? %>
-  <%= link_to "Sign Up", new_signup_path %>
+  <%= link_to "Sign Up", attend_event_path(@event.id) %>
 <% end %>
