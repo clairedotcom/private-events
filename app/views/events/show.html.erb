@@ -1,6 +1,6 @@
 <h1><%= @event.name %></h1>
 <strong>Date: <%= @event.date %></strong><br>
-<strong>Host: <%= @event.creator.name %></strong>
+<strong>Host: <%= link_to "#{@event.creator.name}", @event.creator %></strong>
 <p><%= @event.description %></p>
 <%= link_to "Back", root_path %>
 

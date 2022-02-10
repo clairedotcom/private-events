@@ -1,4 +1,4 @@
-<h1><%= @user.email %>'s Events</h1>
+<h1><%= @user.name %>'s Events</h1>
 
 <% @user.created_events.each do |event| %>
   <p><%= event.name %></p>
@@ -7,8 +7,13 @@
 <% end %>
 
 <h2>Attended Events</h2>
-<% @user.attended_events.each do |event| %>
+  <strong>Past Events</strong>
+  <% @user.attended_events.past.each do |event| %>
   <p><%= event.name %></p>
-<% end %>
-
+  <% end %>
+  <strong>Upcoming Events</strong>
+  <% @user.attended_events.upcoming.each do |event| %>
+  <p><%= event.name %></p>
+  <%end%>
+<br>
 <%= link_to "Home", root_path %>
