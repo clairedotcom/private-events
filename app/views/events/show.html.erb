@@ -8,6 +8,10 @@
   <%= link_to "Sign Up", attend_event_path(@event.id) %>
 <% end %>
 
+<% if @event.creator == current_user %>
+  <%= link_to "Edit Event", edit_event_path %>
+<% end %>
+
 <h2>Event Attendees</h2>
 
 <% @event.attendees.each do |attendee| %>
