@@ -53,6 +53,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def unattend
+    @event = Event.find(params[:id])
+    @signup = Signup.find_by(attended_event_id: @event.id, attendee_id: current_user.id)
+
+    @signup.destroy
+    redirect_to @event, notice: 'You are no longer attending this event'
+  end
+
   private
 
   def event_params

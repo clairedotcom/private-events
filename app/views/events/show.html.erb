@@ -13,6 +13,10 @@
   <%= link_to "Delete Event", @event, method: :delete, data: { confirm: "Are you sure?"} %>
 <% end %>
 
+<% if @event.attendees.include? current_user %>
+  <%= link_to "Unattend Event", unattend_event_path(@event.id) %>
+<% end %>
+
 <h2>Event Attendees</h2>
 
 <% @event.attendees.each do |attendee| %>
