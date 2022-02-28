@@ -44,3 +44,12 @@ body {
 .notice {
     color: red;
 }
+
+.event-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.event-row {
+  padding: 10px;
+}
