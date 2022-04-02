@@ -19,22 +19,23 @@ body {
 }
 
 .navbar {
-    background-color: aquamarine;
+    background-color: rgb(161, 127, 255);
     display: flex;
     justify-content: flex-end;
 }
 
 .navbar-btn {
-    padding: 10px;
+    padding: 0px 10px;
     margin: 8px;
     border: none;
     background-color: white;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 .navbar-title {
-    flex: 1 1 200px;
-    margin-left: 10px;
+    flex: 1 1 auto;
+    margin-left: 20px;
 }
 
 .alert {
@@ -47,9 +48,35 @@ body {
 
 .event-container {
     display: flex;
-    justify-content: space-around;
+}
+
+.event-col {
+    width: 300px;
+    background-color: rgb(240, 240, 240);
+    margin: 20px 10px;
+    flex: 1;
+    border-radius: 6px;
 }
 
 .event-row {
   padding: 10px;
+}
+
+.event-card {
+    margin: 10px;
+    padding: 6px;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.col-header {
+    background-color: aquamarine;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.event-title {
+    margin: 0;
 }
