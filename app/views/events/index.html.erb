@@ -1,6 +1,9 @@
 <div class="event-container">
   <div class="event-col">
-    <h2 class="col-header">Upcoming Events</h2>
+    <div class="col-header">
+      <h2>Upcoming Events</h2>
+    </div>
+    <div class="card-container">
     <% @events.upcoming.each do |event| %>
       <div class="event-card">
         <h2 class="event-title"><%= event.name %></h2>
@@ -9,16 +12,21 @@
         <p><%= link_to "See details", event %></p> 
       </div>
     <% end %>
+    </div>
   </div>
   <div class="event-col">
-    <h2 class="col-header">Past Events</h2>
-    <% @events.past.each do |event| %>
-      <div class="event-card">
-        <h2 class="event-title"><%= event.name %></h2>
-        <p><%= event.date %></p>
-        <p>Event Host: <%= event.creator.name %></p>
-        <p><%= link_to "See details", event %></p>
-      </div>
-    <% end %>
+    <div class="col-header">
+      <h2>Past Events</h2>
+    </div>
+    <div class="card-container">
+      <% @events.past.each do |event| %>
+        <div class="event-card">
+          <h2 class="event-title"><%= event.name %></h2>
+          <p><%= event.date %></p>
+          <p>Event Host: <%= event.creator.name %></p>
+          <p><%= link_to "See details", event %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

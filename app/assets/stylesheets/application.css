@@ -14,28 +14,49 @@
  *= require_self
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+:root {
+    --bg-color: rgb(98, 65, 190);
+    --accent-color: rgb(241, 106, 43);
+    --shadow-color: rgb(211, 211, 211);
+}
+
 body {
     margin: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .navbar {
-    background-color: rgb(161, 127, 255);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--bg-color);
+    color: white;
+    box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.navbar h1 {
+    justify-self: center;
+    align-self: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.navbar-buttons {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
 }
 
 .navbar-btn {
     padding: 0px 10px;
     margin: 8px;
+    width: 80px;
+    height: 48px;
     border: none;
     background-color: white;
     border-radius: 5px;
     font-size: 1rem;
-}
-
-.navbar-title {
-    flex: 1 1 auto;
-    margin-left: 20px;
 }
 
 .alert {
@@ -47,19 +68,22 @@ body {
 }
 
 .event-container {
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+    padding: 24px;
 }
 
 .event-col {
-    width: 300px;
+    width: 100%;
     background-color: rgb(240, 240, 240);
-    margin: 20px 10px;
-    flex: 1;
     border-radius: 6px;
+    box-shadow: 2px 2px 6px var(--shadow-color);
 }
 
-.event-row {
-  padding: 10px;
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .event-card {
@@ -70,11 +94,12 @@ body {
 }
 
 .col-header {
-    background-color: aquamarine;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 0 auto;
+    background-color: var(--accent-color);
     text-align: center;
+    margin: 0;
+    padding: 6px;
+    border-radius: 6px 6px 0px 0px;
+    color: white;
 }
 
 .event-title {
