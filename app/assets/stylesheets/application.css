@@ -20,6 +20,7 @@
     --bg-color: rgb(98, 65, 190);
     --accent-color: rgb(241, 106, 43);
     --shadow-color: rgb(211, 211, 211);
+    --alert-color: rgb(255, 66, 66);
 }
 
 body {
@@ -36,10 +37,10 @@ body {
 }
 
 .navbar h1 {
-    justify-self: center;
+    justify-self: start;
     align-self: center;
     font-size: 2rem;
-    margin: 0;
+    margin: 0px 24px;
 }
 
 .navbar-buttons {
@@ -55,16 +56,18 @@ body {
     height: 48px;
     border: none;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 12px;
     font-size: 1rem;
 }
 
 .alert {
-    color: red;
-}
-
-.notice {
-    color: red;
+    background-color: var(--alert-color);
+    color: white;
+    font-size: 1.5rem;
+    height: 48px;
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
 }
 
 .event-container {
@@ -84,24 +87,47 @@ body {
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
 }
 
 .event-card {
-    margin: 10px;
-    padding: 6px;
+    padding: 24px;
     border-radius: 6px;
     background-color: white;
+    box-shadow: 2px 2px 6px var(--shadow-color);
+}
+
+.event-card p {
+    margin: 0;
 }
 
 .col-header {
-    background-color: var(--accent-color);
-    text-align: center;
     margin: 0;
     padding: 6px;
     border-radius: 6px 6px 0px 0px;
-    color: white;
+    color: rgb(129, 129, 129);
+}
+
+.col-header h2, h1 {
+    margin: 0;
 }
 
 .event-title {
     margin: 0;
+}
+
+.card-btn {
+    background-color: var(--accent-color);
+    color: white;
+    width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.card-btn a {
+    text-decoration: none;
+    color: white;
 }

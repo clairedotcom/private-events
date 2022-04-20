@@ -3,28 +3,30 @@
     <div class="col-header">
       <h1><%= @event.name %></h1>
     </div>
-    <strong>Date: <%= @event.date %></strong><br>
-    <strong>Host: <%= link_to "#{@event.creator.name}", @event.creator %></strong>
-    <p><%= @event.description %></p>
-    <%= link_to "Back", root_path %>
+    <div class="event-card">
+      <strong>Date: <%= @event.date %></strong>
+      <strong>Host: <%= link_to "#{@event.creator.name}", @event.creator %></strong>
+      <p><%= @event.description %></p>
+      <button class="card-btn"><%= link_to "Back", root_path %></button>
 
-    <% if user_signed_in? %>
-      <%= link_to "Sign Up", attend_event_path(@event.id) %>
-    <% end %>
+      <% if user_signed_in? %>
+        <button class="card-btn"><%= link_to "Sign Up", attend_event_path(@event.id) %></button>
+      <% end %>
 
-    <% if @event.creator == current_user %>
-      <%= link_to "Edit Event", edit_event_path %>
-      <%= link_to "Delete Event", @event, method: :delete, data: { confirm: "Are you sure?"} %>
-    <% end %>
+      <% if @event.creator == current_user %>
+        <button class="card-btn"><%= link_to "Edit Event", edit_event_path %></button>
+        <button class="card-btn"><%= link_to "Delete Event", @event, method: :delete, data: { confirm: "Are you sure?"} %></button>
+      <% end %>
 
-    <% if @event.attendees.include? current_user %>
-      <%= link_to "Unattend Event", unattend_event_path(@event.id) %>
-    <% end %>
+      <% if @event.attendees.include? current_user %>
+        <button class="card-btn"><%= link_to "Unattend Event", unattend_event_path(@event.id) %></button>
+      <% end %>
 
-    <h2>Event Attendees</h2>
+      <h2>Event Attendees</h2>
 
-    <% @event.attendees.each do |attendee| %>
-      <p><%= attendee.name%></p>
-    <% end %>
+      <% @event.attendees.each do |attendee| %>
+        <p><%= attendee.name%></p>
+      <% end %>
+    </div>
   </div>
 </div>
