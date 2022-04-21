@@ -7,7 +7,7 @@
     <% @events.upcoming.each do |event| %>
       <div class="event-card">
         <h2 class="event-title"><%= event.name %></h2>
-        <p><%= event.date %></p>
+        <p><%= event.pretty_date %></p>
         <p>Event Host: <%= event.creator.name %></p>
         <p><%= link_to "See details", event %></p> 
       </div>
@@ -22,7 +22,7 @@
       <% @events.past.each do |event| %>
         <div class="event-card">
           <h2 class="event-title"><%= event.name %></h2>
-          <p><%= event.date %></p>
+          <p><%= event.pretty_date %></p>
           <p>Event Host: <%= event.creator.name %></p>
           <button class="card-btn"><%= link_to "See details", event %></button>
         </div>

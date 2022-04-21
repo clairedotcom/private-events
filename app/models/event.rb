@@ -5,4 +5,8 @@ class Event < ApplicationRecord
 
   scope :past, -> { where("date < ?", Time.now) }
   scope :upcoming, -> { where("date > ?", Time.now) }
+
+  def pretty_date
+    date.strftime('%B %d, %Y %l%P')
+  end
 end
