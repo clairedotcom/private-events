@@ -34,16 +34,17 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: var(--content-bg);
-    color: var(--text-accent);
     border: none;
     height: 64px;
 }
 
-.navbar h1 {
+.navbar .navbar-title {
     justify-self: start;
     align-self: center;
     font-size: 2rem;
     margin: 0px 24px;
+    text-decoration: none;
+    color: var(--text-accent);
 }
 
 .navbar-links {
@@ -52,7 +53,7 @@ body {
     justify-content: flex-end;
 }
 
-.navbar a {
+.navbar-links a {
     padding: 0px 10px;
     margin: 8px;
     font-size: 1rem;
@@ -60,7 +61,7 @@ body {
     color: var(--text-title);
 }
 
-.navbar a:hover {
+.navbar-links a:hover {
     text-decoration: underline;
 }
 
