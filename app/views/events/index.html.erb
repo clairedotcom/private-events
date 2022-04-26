@@ -9,7 +9,7 @@
         <h2 class="event-title"><%= event.name %></h2>
         <p><%= event.pretty_date %></p>
         <p>Event Host: <%= event.creator.name %></p>
-        <p><%= link_to "See details", event %></p> 
+        <button class="card-btn"><%= link_to "See details", event %></button> 
       </div>
     <% end %>
     </div>
