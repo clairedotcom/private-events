@@ -1,19 +1,30 @@
-<h1><%= @user.name %>'s Events</h1>
+<div class="event-container">
+  <div class="event-col">
+    <div class="col-header">
+      <h1><%= @user.name %>'s Events</h1>
+    </div>
+    <div class="event-card">
+      <% @user.created_events.each do |event| %>
+        <h3><%= event.name %></h6>
+        <p><%= event.pretty_date %></p>
+        <p><%= event.description %></p>
+        <%= link_to "Event Details", event %>
+      <% end %>
 
-<% @user.created_events.each do |event| %>
-  <p><%= event.name %></p>
-  <p><%= event.date %></p>
-  <p><%= event.description %></p>
-<% end %>
-
-<h2>Attended Events</h2>
-  <strong>Past Events</strong>
-  <% @user.attended_events.past.each do |event| %>
-  <p><%= event.name %></p>
-  <% end %>
-  <strong>Upcoming Events</strong>
-  <% @user.attended_events.upcoming.each do |event| %>
-  <p><%= event.name %></p>
-  <%end%>
-<br>
-<%= link_to "Home", root_path %>
+      <h2>Attended Events</h2>
+        <h3>Past Events</h3>
+        <% @user.attended_events.past.each do |event| %>
+        <p><%= event.name %></p>
+        <%= link_to "Event Details", event %>
+        <% end %>
+        <h3>Upcoming Events</h3>
+        <% @user.attended_events.upcoming.each do |event| %>
+        <p><%= event.name %></p>
+        <%= link_to "Event Details", event %>
+        <%end%>
+      <div class="button-container">
+        <button class="card-btn"><%= link_to "Home", root_path %></button>
+      </div>
+    </div>
+  </div>
+</div>
